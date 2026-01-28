@@ -85,3 +85,50 @@ const nextConfig = {
 - Любой статический хостинг
 
 Для деплоя на Vercel просто подключите репозиторий к вашему аккаунту Vercel и следуйте инструкциям.
+
+
+## Пример конфига для `nginx`
+```
+# Для сайтов с использованием next.js
+server {
+    # порт
+    listen 9087;
+    server_name localhost;
+    
+    # Указать папку сайта
+    root D:/sites/test-repo; 
+    index index.html index.htm;
+    
+    # Кодировка
+    charset utf-8;
+    
+    # Основная директория
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+    
+    # Для _next статических файлов
+    location /_next/static/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        add_header Access-Control-Allow-Origin "*";
+    }
+    
+    # Для других статических файлов
+    location /static/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    
+    # Обработка ошибок
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+    
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root html;
+    }
+}
+```
