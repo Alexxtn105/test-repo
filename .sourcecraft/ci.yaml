@@ -1,0 +1,16 @@
+on:
+  push:
+    - workflows: [build-and-deploy]
+      filter:
+        branches: [main]
+
+workflows:
+  build-and-deploy:
+    tasks:
+      - name: build-task
+        cubes:
+          - name: setup-node
+            image: docker.io/library/node:18
+            script:
+              - npm install
+              - npm run build
