@@ -12,9 +12,9 @@ export function Hero() {
   });
 
 // слишком большие значения
-// const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-// const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-// const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+//  const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+//  const y2 = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+//  const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
 
 // меньшие значения (меньше дерганий):
   const y1 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
@@ -44,7 +44,14 @@ export function Hero() {
             //или с tailwind
             //className="absolute inset-0 bg-[url('/grid.svg')] bg-[size:100%_100%] bg-center bg-no-repeat opacity-5"
             // непрозрачность
-            className="absolute inset-0 bg-[url('/grid.svg')] bg-[size:100%_100%] bg-center bg-no-repeat opacity-50"
+            //className="absolute inset-0 bg-[url('/grid.svg')] bg-[size:100%_100%] bg-center bg-no-repeat opacity-50"
+
+            //с картинкой png (растянута)
+            //className="absolute inset-0 bg-[url('/main.png')] bg-[size:100%_100%] bg-center bg-no-repeat opacity-50"
+            //или с tailwind
+            //className="absolute inset-0 bg-[url('/main.png')] bg-[size:100%_100%] bg-center bg-no-repeat opacity-30"
+            className="absolute inset-0 bg-[url('/main.png')] bg-[length:1024px_1024px] bg-center bg-no-repeat opacity-30"
+
         />
 
         <motion.div

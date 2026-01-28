@@ -36,7 +36,10 @@ export function Features() {
             Что я делаю
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Создаю исключительные цифровые произведения с вниманием к деталям.
+            Создаю исключительные цифровые произведения
+          </p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            с вниманием к деталям
           </p>
         </motion.div>
 
